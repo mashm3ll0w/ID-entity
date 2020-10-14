@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@400;500;700&display=swap");
+$headings: "Roboto", sans-serif;
+$paras: "Montserrat", sans-serif;
+
+$backgroundColor: #ffe3bc;
+$buttonColor: #d75c08;
+$textColor: #011328;
+
+@mixin flex($direction) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	color: $textColor;
+}
+
+body {
+	background-color: $backgroundColor;
+	margin: 0;
+	padding: 0;
+	font-family: $paras;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: $textColor;
+	font-weight: bold;
+}
+
+.navbar {
+	background-color: $buttonColor;
+	height: 3.5rem;
+	display: grid;
+	grid-template-columns: 64% 7% 15%;
+	grid-gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25rem;
+	&--brand {
+		color: #fff;
+	}
+	&--home,
+	&--about {
+		color: #fff;
+		font-weight: 300;
+	}
+}
+
+.container {
+	width: 100%;
+	height: 80vh;
+	margin-top: 3rem;
+	padding: 1.75rem;
+	display: grid;
+	&--content {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		justify-content: center;
+		align-items: center;
+	}
+	&--text {
+    @include flex(column);
+    &--heading{
+      font-size: 5.5rem;
+      font-family: $headings;
+    }
+    .info {
+      font-size: 1.9rem;
+      margin: 5px;
+    }
+    .tagline  {
+      font-size: 1.5rem;
+      margin: 5px 5px 2rem;
+    }
+    input {
+      background-color: $buttonColor;
+      border: none;
+      height: 2.5rem;
+      width: 10rem;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+      justify-content: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+	}
+	&--image {
+		@include flex(column);
+		img {
+			height: 500px;
+			color: $buttonColor;
+		}
+	}
+}
